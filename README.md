@@ -25,6 +25,18 @@ Things you may want to cover:
 
 * Add bootstrap-sass and simple_form gems to Gemfile
 
+* Generate User model
+```Ruby
+rails g model user first_name:string{16} last_name:string email_address:string address_line_one address_line_two address_city address_state:string{2} address_zip:string
+```
+* Add activerecord-import gem to Gemfile
+
+* Generate seed.rb to import 1_000_000_000 records for testing, we will use import method from activerecord-import gem
+```ruby
+  #/db/seeds.rb
+
+```
+
 * Run generate for simple_form and integrated with bootstrap
 
 ```Ruby

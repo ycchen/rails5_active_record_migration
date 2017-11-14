@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113165606) do
+ActiveRecord::Schema.define(version: 20171114172153) do
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
+    t.string "first_name", limit: 16
     t.string "last_name"
-    t.string "email"
+    t.string "email_address"
+    t.string "address_line_one"
+    t.string "address_line_two"
+    t.string "address_city"
+    t.string "address_state", limit: 2
+    t.string "address_zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_zip"], name: "index_users_on_address_zip"
+    t.index ["email_address"], name: "index_users_on_email_address"
+    t.index ["first_name"], name: "index_users_on_first_name"
+    t.index ["last_name"], name: "index_users_on_last_name"
   end
 
 end
